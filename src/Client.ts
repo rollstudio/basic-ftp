@@ -807,7 +807,7 @@ class TransferResolver {
 
     protected tryResolve(task: TaskResolver) {
         // To resolve, we need both control and data connection to report that the transfer is done.
-        const canResolve = this.dataTransferDone && this.response !== undefined
+        const canResolve = this.response !== undefined
         if (canResolve) {
             this.ftp.dataSocket = undefined
             task.resolve(this.response)
